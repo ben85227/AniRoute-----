@@ -1,0 +1,512 @@
+.tours-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #2c5aa0 0%, #1a3d6b 100%);
+    position: relative;
+    z-index: 1000;
+
+    @media (max-width: 768px) {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        height: 50px;
+
+        @media (max-width: 768px) {
+            height: 40px;
+        }
+    }
+
+    .menu {
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+
+            li {
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight: 500;
+                    transition: opacity 0.3s ease;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+
+        .line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: white;
+                transition: all 0.3s ease;
+            }
+
+            &::before {
+                top: -8px;
+            }
+
+            &::after {
+                top: 8px;
+            }
+        }
+    }
+}
+
+.banner {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        height: 50vh;
+    }
+
+    .square-box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .circle-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(44, 90, 160, 0.9);
+            padding: 40px 60px;
+            border-radius: 50%;
+            min-width: 300px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: 768px) {
+                min-width: 250px;
+                min-height: 250px;
+                padding: 30px 40px;
+            }
+
+            @media (max-width: 480px) {
+                min-width: 200px;
+                min-height: 200px;
+                padding: 20px 30px;
+            }
+
+            .title-l {
+                color: white;
+
+                .en-l {
+                    font-size: 24px;
+                    font-weight: 300;
+                    margin: 0 0 10px 0;
+                    letter-spacing: 2px;
+
+                    @media (max-width: 768px) {
+                        font-size: 20px;
+                    }
+
+                    @media (max-width: 480px) {
+                        font-size: 18px;
+                    }
+                }
+
+                .cn-title-xl {
+                    font-size: 36px;
+                    font-weight: 700;
+                    margin: 0;
+                    letter-spacing: 3px;
+
+                    @media (max-width: 768px) {
+                        font-size: 30px;
+                    }
+
+                    @media (max-width: 480px) {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tours-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        padding: 60px 20px;
+    }
+
+    .tours-intro {
+        text-align: center;
+        margin-bottom: 60px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
+        }
+
+        .text-content {
+            max-width: 800px;
+            margin: 0 auto;
+
+            p {
+                font-size: 18px;
+                line-height: 1.8;
+                color: #333;
+                margin: 0;
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.tour-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .tour-image {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+
+        @media (max-width: 768px) {
+            height: 220px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.05);
+        }
+
+        .tour-overlay {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(44, 90, 160, 0.9);
+            padding: 8px 16px;
+            border-radius: 20px;
+
+            .tour-duration {
+                color: white;
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .tour-content {
+        padding: 30px;
+
+        @media (max-width: 768px) {
+            padding: 25px;
+        }
+
+        .tour-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2c5aa0;
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+
+            @media (max-width: 768px) {
+                font-size: 20px;
+            }
+        }
+
+        .tour-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin: 0 0 20px 0;
+            font-weight: 400;
+
+            @media (max-width: 768px) {
+                font-size: 15px;
+            }
+        }
+
+        .tour-price {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+            margin-bottom: 25px;
+
+            .price-text {
+                font-size: 28px;
+                font-weight: 700;
+                color: #e74c3c;
+
+                @media (max-width: 768px) {
+                    font-size: 24px;
+                }
+            }
+
+            .price-unit {
+                font-size: 16px;
+                color: #666;
+            }
+        }
+
+        .tour-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #2c5aa0 0%, #1a3d6b 100%);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            font-weight: 600;
+
+            &:hover {
+                background: linear-gradient(135deg, #1a3d6b 0%, #2c5aa0 100%);
+                transform: translateY(-2px);
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+                img {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background: #1a3d6b;
+    color: white;
+    padding: 40px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .left-text {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .text-box {
+            p {
+                margin: 0 0 8px 0;
+                font-size: 14px;
+            }
+
+            a {
+                color: #ccc;
+                text-decoration: none;
+                font-size: 14px;
+                display: block;
+                margin-bottom: 8px;
+
+                &:hover {
+                    color: white;
+                }
+            }
+
+            small {
+                font-size: 12px;
+                color: #999;
+            }
+        }
+    }
+
+    .right-text {
+        text-align: right;
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 0 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+        }
+
+        a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .follow-us {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 15px;
+
+            @media (max-width: 768px) {
+                justify-content: center;
+            }
+
+            span {
+                font-size: 12px;
+                color: #999;
+            }
+
+            a {
+                display: inline-block;
+                margin: 0;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                    opacity: 0.7;
+                    transition: opacity 0.3s ease;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    #btn-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #2c5aa0;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        z-index: 1000;
+
+        &::before {
+            content: '↑';
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        &:hover {
+            background: #1a3d6b;
+        }
+
+        @media (max-width: 768px) {
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+        }
+    }
+}

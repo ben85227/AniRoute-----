@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'  // 引入 React 和 useState
+import { Link } from 'react-router-dom'  // 引入 Link
 import '../scss/_reset.scss'
 import '../scss/Navbar.scss'
 
 const Navbar = () => {
-      const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)  // 定義狀態控制選單開關
 
     const toggleMenu = () => {
-        setIsOpen(!isOpen)
+        setIsOpen(!isOpen)  // 點擊後切換開關狀態
     }
-  return (
+
+    return (
         <div id='topbar'>
             <div className="logo"><Link to='/'>AniRoute 動漫巡禮</Link></div>
             <div className="navbar">
@@ -22,11 +24,11 @@ const Navbar = () => {
                 </button>
                 <nav className={`navigation ${isOpen ? 'show' : ''}`}>
                     <ul className='menu'>
-                        {/* <li><Link to='/News'>最新消息</Link></li> 
-                        <li><Link to='/Illustrations'>酒精圖鑑</Link></li> 
-                        <li><Link to='/Bar'>酒吧地圖</Link></li> 
-                        <li><Link to='/BarRoute'>路跑路線</Link></li> 
-                        <li><Link to='/About'>關於我們</Link></li> */}
+                        {/* <li><Link to='/News'>最新消息</Link></li>
+            <li><Link to='/Illustrations'>酒精圖鑑</Link></li>
+            <li><Link to='/Bar'>酒吧地圖</Link></li>
+            <li><Link to='/BarRoute'>路跑路線</Link></li>
+            <li><Link to='/About'>關於我們</Link></li> */}
                     </ul>
                 </nav>
             </div>
