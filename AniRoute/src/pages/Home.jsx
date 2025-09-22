@@ -209,7 +209,7 @@ const SafeTravel = () => {
       {/* Hero Section */}
       <section id="hero" ref={sectionRefs.hero} className="hero-section">
         <div className="hero-bg">
-          <img src="/api/placeholder/1920/1080" alt="New Zealand Railway" className="hero-image" />
+          <img src="HomeHero.png" alt="New Zealand Railway" className="hero-image" />
         </div>
         
         <div className="hero-content">
