@@ -75,7 +75,7 @@ const Contact = () => {
       <main>
         <div className="banner">
           <div className="square-box">
-            <img src="/images/banner-slide-1.jpg" alt="紐西蘭美景" />
+            <img src="/images/banner-slide-1.jpg" alt="" />
             <div className="circle-box">
               <header className="title-l">
                 <h3 className="en-l">Tours</h3>
@@ -89,8 +89,7 @@ const Contact = () => {
           <div className="tours-intro">
             <div className="text-content cn-content-m">
               <p>
-                安心旅遊精心規劃多種紐西蘭行程，從經典的南北島全覽到特色主題旅遊，
-                滿足不同旅客的需求。每個行程都經過精心設計，讓您深度體驗紐西蘭的自然美景與人文風情。
+                
               </p>
             </div>
           </div>
@@ -132,21 +131,21 @@ const Contact = () => {
           <div className="text-box">
             <p>交觀甲字第123456號．品保北8888號</p>
             <a href="#">隱私權保護政策</a>
-            <small className="en-xs">Copyright © 2024 Safe Travel. All Rights Reserved</small>
+            <small className="en-xs">Copyright © 2024 AniRoute.</small>
           </div>
         </div>
         <div className="right-text cn-content-s">
           <h3 className="en-m">Contact</h3>
           <p>(+886) 02-8888-8888</p>
-          <a href="mailto:service@safetravel.com">service@safetravel.com</a>
-          <p>台北市內湖區一二路123號1樓</p>
+          <a href="mailto:service@safetravel.com">service@AniRoute.com</a>
+          <p>新北市新店區一二路123號1樓</p>
           <div className="follow-us">
             <span className="en-xs">Follow us</span>
             <a href="#">
-              <img src="/images/icon-line.svg" alt="安心旅遊官方 Line" />
+              <img src="/images/icon-line.svg" alt="動漫巡禮官方 Line" />
             </a>
             <a href="#">
-              <img src="/images/icon-fb.svg" alt="安心旅遊 FB" />
+              <img src="/images/icon-fb.svg" alt="動漫巡禮 FB" />
             </a>
           </div>
         </div>

@@ -78,16 +78,16 @@ const SafeTravel = () => {
 
   const featuresData = [
     {
-      title: "專業旅遊服務",
-      description: "我們是一家專注於紐西蘭旅遊的專業旅行社，致力於為每位旅客提供最安全、最舒適的旅行體驗。憑藉多年的當地經驗和專業知識，我們深知如何讓您的紐西蘭之旅成為一生難忘的回憶。"
+      title: "分鏡對位・熟門嚮導",
+      description: "依作品分鏡標註站位與光線時段，提供對位座標與拍攝禮儀，到場就能重現名場面。食宿依巡禮動線精選，近車站與景點，早出卡位更從容。"
     },
     {
-      title: "客製化行程設計",
-      description: "每個旅客都是獨一無二的，因此我們提供完全客製化的行程規劃服務。從冒險刺激的極限運動到寧靜優美的自然風光，我們都能為您量身打造最適合的旅遊方案。"
+      title: "彈性行程安排・安心朝聖",
+      description: "每日預留可替換的周邊店鋪／聯名咖啡／展覽，遇天候或人潮即時啟動 Plan B。附交通支援與即時客服，第一次朝聖也踏實。"
     },
     {
-      title: "安全保障承諾",
-      description: "安全是我們最重視的核心價值。我們與當地最優秀的導遊和服務供應商合作，確保每一個環節都符合最高的安全標準，讓您能夠完全放心地享受旅程。"
+      title: "限定周邊・不漏特典",
+      description: "整理限定販售與特典規則、Stamp Rally（集章）與排隊攻略，附庫存熱度＆退稅提醒，收藏更完整。"
     }
   ];
 
@@ -147,68 +147,33 @@ const SafeTravel = () => {
       number: "1",
       title: "瀏覽行程",
       subtitle: "尋找您喜愛的行程類型",
-      description: "我們提供多種不同的旅遊行程，包含冒險、文化、自然風光等主題，選擇最適合您的旅遊方式。"
+      description: "我們提供多種不同的主題類型，您可以直接按照既有行程，或是部分進行客製化調整。"
     },
     {
       number: "2",
       title: "填寫線上需求表",
       subtitle: "提供基本資料及需求",
-      description: "請詳細填寫您的旅遊需求，包含人數、時間、預算等資訊，我們將為您客製化專屬行程。"
+      description: "請提供您的基本資料及聯絡資訊，以及您初步的旅遊需求，包含出發日、天數、人數等資訊。"
     },
     {
       number: "3",
       title: "服務專員聯繫您確認",
       subtitle: "進行最後確認與相關作業",
-      description: "我們的專業服務團隊將與您聯繫，確認所有細節並協助您完成預訂程序。"
+      description: "我們將盡快與您確認行程規劃細節，提供報價、進行簽約及收款，並安排後續出團作業。"
     }
   ];
 
   return (
     <div className="safe-travel">
-      {lightboxData && (
-        <div className="overlay" onClick={closeLightbox}>
-          <div className="lightbox-content" onClick={e => e.stopPropagation()}>
-            <span className="close" onClick={closeLightbox}>×</span>
-            <br />
-            <div>
-              <h2 className="lightbox-title">{lightboxData.title}</h2>
-              <hr />
-              <p className="lightbox-paragraph">{lightboxData.content}</p>
-              <h4 className="btn" onClick={closeLightbox}>Join</h4>
-            </div>
-          </div>
-        </div>
-      )}
-
-      <nav className={`navbar ${activeAnimations.navbar ? 'scrolled' : ''} ${isMenuOpen ? 'menu-active' : ''}`}>
-        <div className="nav-container">
-          <a href="#hero" className="nav-logo">
-            <img src="/api/placeholder/120/40" alt="Safe Travel Logo" />
-          </a>
-
-          <div className="nav-menu">
-            <ul>
-              <li><a href="#features">特色服務</a></li>
-              <li><a href="#tours">行程列表</a></li>
-              <li><a href="#booking">報名流程</a></li>
-              <li><a href="#contact">聯絡我們</a></li>
-            </ul>
-          </div>
-
-          <button className="nav-toggle" onClick={toggleMenu}>
-            <span className={`hamburger ${isMenuOpen ? 'active' : ''}`}></span>
-          </button>
-        </div>
-      </nav>
 
       <section id="hero" ref={sectionRefs.hero} className="hero-section">
         <div className="hero-bg">
-          <img src="HomeHero.png" alt="New Zealand Railway" className="hero-image" />
+          <img src="HomeHero.png" alt="hero-image" className="hero-image" />
         </div>
 
         <div className="hero-content">
           <div className="hero-text">
-            <h1 className="hero-title">下一幕，在現實</h1>
+            <h2 className="hero-title">下一幕，在現實</h2>
             <p className="hero-subtitle">專為動漫迷打造的聖地巡禮行程</p>
             <p className="hero-description">作品地圖 × 專車動線 × 導遊帶路</p>
           </div>
@@ -218,8 +183,8 @@ const SafeTravel = () => {
       <section id="features" ref={sectionRefs.features} className="features-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">為什麼選擇我們</h2>
-            <p className="section-subtitle">專業、安全、客製化的紐西蘭旅遊體驗</p>
+            <p className="section-title">把喜歡走成現實</p>
+            <p className="section-subtitle">選擇 AniRoute 的理由</p>
           </div>
 
           <div className="features-grid">
@@ -316,8 +281,8 @@ const SafeTravel = () => {
           <div className="footer-left">
             <img src="/api/placeholder/120/40" alt="Safe Travel Logo" className="footer-logo" />
             <div className="footer-text">
-              <p>Safe Travel 安全旅遊</p>
-              <small>您值得信賴的紐西蘭旅遊夥伴</small>
+              <p>AniRoute 動漫巡禮</p>
+              <small>您值得信賴的動漫朝聖旅遊夥伴</small>
             </div>
           </div>
 
