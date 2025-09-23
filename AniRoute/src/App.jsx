@@ -5,6 +5,7 @@ import Navbar from './component/Navbar.jsx'
 import Footer from './component/Footer.jsx'
 import ScrollToTop from './component/ScrollToTop.jsx'
 import ToursList from './pages/ToursList.jsx'
+import CustomizedTours from './pages/CustomizedTours.jsx'
 import Contact from './pages/Contact.jsx'
 import Home from './pages/Home'
 
@@ -17,6 +18,7 @@ export default function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/TourList' element={<ToursList />}></Route>
+          <Route path='/CustomizedTours' element={<CustomizedTours />}></Route>
           <Route path='/Contact' element={<Contact />}></Route>
         </Routes>
       </div>

@@ -258,8 +258,8 @@ const SafeTravel = () => {
             <div className="contact-info">
               <h2>Customized Tours</h2>
               <h3>量身訂做</h3>
-              <p>根據您的興趣和需求，我們可以為您設計獨一無二的旅程。無論是動漫聖地巡禮、自然風光探索，還是冒險運動體驗，我們都能為您打造專屬的紐西蘭之旅。</p>
-              <button className="contact-btn"><Link to="/Contact">客製規劃 →</Link></button>
+              <p>無論您是對行程已有想法，或需要規劃上的建議，動漫巡禮皆歡迎您與我們聯繫，我們將聆聽您的需求，為您量身訂製最適合您的行程。</p>
+              <button className="contact-btn"><Link to="/CustomizedTours">客製規劃 →</Link></button>
             </div>
           </div>
 
@@ -269,7 +269,7 @@ const SafeTravel = () => {
             <div className="contact-info">
               <h2>Contact Us</h2>
               <h3>聯絡我們</h3>
-              <p>準備好開始您的紐西蘭冒險之旅了嗎？立即聯絡我們的專業團隊，讓我們為您規劃一趟完美的旅程。我們提供24小時客服支援，隨時為您解答疑問。</p>
+              <p>感謝您來訪動漫巡禮。若您對本公司旅遊行程，需要進一步詢皆歡迎您隨時與我們聯繫</p>
               <button className="contact-btn">立即諮詢 →</button>
             </div>
           </div>
