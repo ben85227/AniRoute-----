@@ -1,3 +1,5 @@
+@use 'reset' as *;
+@use "variables" as *;
 
 .container {
     max-width: 1200px;
@@ -5,8 +7,7 @@
     padding: 0 20px;
 }
 
-// Safe Travel Component
-.safe-travel {
+.Home {
     width: 100%;
     min-height: 100vh;
 
@@ -109,92 +110,12 @@
                 }
             }
         }
-
-        .hero-form {
-            flex: 0 0 400px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-
-            @media (max-width: 992px) {
-                flex: none;
-                width: 100%;
-                max-width: 500px;
-            }
-
-            h3 {
-                font-size: 1.8rem;
-                color: #2C3E50;
-                margin-bottom: 10px;
-                text-align: center;
-            }
-
-            >p {
-                color: #5A6C7D;
-                text-align: center;
-                margin-bottom: 30px;
-            }
-
-            .booking-form {
-                .form-group {
-                    margin-bottom: 25px;
-
-                    label {
-                        display: block;
-                        font-weight: 600;
-                        color: #2C3E50;
-                        margin-bottom: 8px;
-                    }
-
-                    select,
-                    input,
-                    textarea {
-                        width: 100%;
-                        padding: 12px 15px;
-                        border: 2px solid #E8EDEF;
-                        border-radius: 10px;
-                        font-size: 14px;
-                        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                        font-family: inherit;
-
-                        &:focus {
-                            outline: none;
-                            border-color: #4A90A4;
-                            box-shadow: 0 0 0 3px rgba(74, 144, 164, 0.1);
-                        }
-                    }
-
-                    textarea {
-                        resize: vertical;
-                        min-height: 100px;
-                    }
-                }
-
-                .submit-btn {
-                    width: 100%;
-                    background: linear-gradient(135deg, #4A90A4, #7DB4C7);
-                    color: #FFFFFF;
-                    padding: 15px;
-                    border-radius: 10px;
-                    font-size: 16px;
-                    font-weight: 600;
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-                    &:hover {
-                        transform: translateY(-2px);
-                        box-shadow: 0 8px 20px rgba(44, 62, 80, 0.1);
-                    }
-                }
-            }
-        }
     }
 
     // Features Section
     .features-section {
         padding: 100px 0;
-        background: #FFFFFF;
+        background: $color-b;
 
         .section-header {
             text-align: center;
@@ -203,7 +124,7 @@
             .section-title {
                 font-size: 2.5rem;
                 font-weight: 700;
-                color: #2C3E50;
+                color: $color-o;
                 margin-bottom: 20px;
 
                 @media (max-width: 768px) {
@@ -213,7 +134,7 @@
 
             .section-subtitle {
                 font-size: 1.2rem;
-                color: #5A6C7D;
+                color: $color-g;
             }
         }
 
@@ -246,8 +167,8 @@
             &:hover {
                 transform: translateY(-10px);
                 box-shadow: 0 20px 40px rgba(44, 62, 80, 0.1);
-                border-color: #7DB4C7;
-                background: #FFFFFF;
+                border-color: $color-b;
+                background: $color-o;
             }
 
             .feature-icon {
@@ -270,12 +191,12 @@
             .feature-title {
                 font-size: 1.5rem;
                 font-weight: 600;
-                color: #2C3E50;
+                color: $color-b;
                 margin-bottom: 20px;
             }
 
             .feature-description {
-                color: #5A6C7D;
+                color: $color-b;
                 line-height: 1.6;
             }
         }
@@ -529,180 +450,225 @@
     }
 
     // Contact Section
-    .contact-section {
-        background: #2E5A68;
-        background-image: linear-gradient(rgba(46, 90, 104, 0.9), rgba(46, 90, 104, 0.9)), url('/api/placeholder/1920/600');
-        background-size: cover;
-        background-position: center;
-        color: #FFFFFF;
+    #contact {
+        height: 80vh;
 
-        .contact-content {
-            display: flex;
-            min-height: 500px;
+        .split-banner {
+            /* 斜線基準與當前切點 + 分隔縫（divider gap，分隔線） + 斜率（slope，斜率） + 保留比例 */
+            --cut-top0: 60%;
+            /* 基準：頂邊交點（%） */
+            --cut-bottom0: 40%;
+            /* 基準：底邊交點（%） */
+            --ct: var(--cut-top0);
+            /* 目前頂邊交點（隨 hover 變動） */
+            --cb: var(--cut-bottom0);
+            /* 目前底邊交點（隨 hover 變動） */
+            --slope: calc(var(--cut-top0) - var(--cut-bottom0));
+            /* 斜率差（維持角度用） */
+            --gap: 12px;
+            /* 中縫寬度 */
+            --keep: 4%;
+            /* hover（懸停）時保留比例（= 只覆蓋 90%） */
 
-            @media (max-width: 992px) {
-                flex-direction: column;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border: 10px solid #b3a68f;
+            background: #b3a68f;
+            /* 中縫顏色同邊框 */
+            overflow: hidden;
+
+            /* ⬇️ 沿斜角推到 90%：左側 hover → 把切線推到右側 90%；右側 hover → 推到左側 10% */
+            &:has(.panel.left:hover) {
+                --ct: calc(100% - var(--keep));
+                /* 90% */
+                --cb: calc((100% - var(--keep)) - var(--slope));
+                /* 90% - 斜率差 */
+                /* 可選：推近邊緣時把中縫收細或歸零
+			    --gap: 8px; 或 --gap: 0;
+			*/
             }
-        }
 
-        .contact-left,
-        .contact-right {
-            flex: 1;
-            padding: 80px 40px;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-            @media (max-width: 992px) {
-                padding: 60px 20px;
+            &:has(.panel.right:hover) {
+                --cb: var(--keep);
+                /* 10% */
+                --ct: calc(var(--keep) + var(--slope));
+                /* 10% + 斜率差 */
+                /* 可選：--gap: 8px; 或 --gap: 0; */
             }
 
-            &:hover {
-                background: rgba(255, 255, 255, 0.05);
+            .panel {
+                position: absolute;
+                inset: 0;
+                background-repeat: no-repeat;
+                background-size: cover;
+                cursor: pointer;
+                z-index: 1;
 
-                .contact-btn {
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                transition:
+                    clip-path .6s cubic-bezier(.25, .46, .45, .94),
+                    background-position .6s cubic-bezier(.25, .46, .45, .94),
+                    background-size .6s cubic-bezier(.25, .46, .45, .94);
+                will-change: clip-path, background-position, background-size;
+
+                /* hover 灰遮罩（overlay，覆蓋層） */
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background: transparent;
+                    transition: background .4s ease;
+                    z-index: 1;
+                    pointer-events: none;
                 }
-            }
 
-            .contact-info {
-                h2 {
-                    font-family: "Josefin Sans", sans-serif;
-                    font-size: 1.3rem;
-                    font-weight: 400;
-                    margin-bottom: 10px;
-                    opacity: 0.9;
-                }
+                /* === Label（標籤）—統一左/上 + transform 控位，避免亂飛 === */
+                .label {
+                    --lx: 28px;
+                    /* left 起點 */
+                    --ly: 24px;
+                    /* top 起點 */
+                    --tx: 0;
+                    /* translateX */
+                    --ty: 0;
+                    /* translateY */
 
-                h3 {
-                    font-size: 2.2rem;
+                    position: absolute;
+                    left: var(--lx);
+                    top: var(--ly);
+                    transform: translate(var(--tx), var(--ty));
+
+                    z-index: 2;
+                    color: #fff;
+                    text-shadow: 0 2px 8px rgba(0, 0, 0, .45);
                     font-weight: 700;
-                    margin-bottom: 25px;
+                    letter-spacing: .06em;
+                    white-space: nowrap;
+                    line-height: 1;
 
-                    @media (max-width: 768px) {
-                        font-size: 1.8rem;
+                    h2 {
+                        font-size: 40px;
                     }
+
+                    h3 {
+                        font-size: 32px;
+                    }
+
+                    p {
+                        font-size: 28px;
+                        display: none;
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                        white-space: normal;
+                        word-break: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 100%;
+                    }
+
+                    transition: left .6s cubic-bezier(.25, .46, .45, .94),
+                    top .6s cubic-bezier(.25, .46, .45, .94),
+                    transform .6s cubic-bezier(.25, .46, .45, .94),
+                    font-size .6s cubic-bezier(.25, .46, .45, .94);
                 }
 
-                p {
-                    line-height: 1.6;
-                    margin-bottom: 30px;
-                    opacity: 0.9;
-                    font-size: 1.05rem;
+                /* hover：遮罩 */
+                &:hover::after {
+                    background: rgba(0, 0, 0, .3);
+                }
+            }
+
+            /* 左側面板 */
+            .panel.left {
+                background: url(../images/Home/Contact_left.png) center/cover;
+
+                /* 用當前切點 --ct / --cb（中縫各退 gap/2） */
+                clip-path: polygon(0 0,
+                        calc(var(--ct) - var(--gap)/2) 0,
+                        calc(var(--cb) - var(--gap)/2) 100%,
+                        0 100%);
+                background-position: 20% 50%;
+
+                /* 初始：左上角 */
+                .label {
+                    --lx: 28px;
+                    --ly: 24px;
+                    --tx: 0;
+                    --ty: 0;
                 }
 
-                .contact-btn {
-                    background: rgba(255, 255, 255, 0.1);
-                    color: #FFFFFF;
-                    padding: 15px 30px;
-                    border-radius: 30px;
-                    border: 2px solid rgba(255, 255, 255, 0.2);
-                    font-weight: 600;
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                    backdrop-filter: blur(10px);
+                /* 視覺往右填（background 位移/放大） */
+                &:hover {
+                    background-position: 38% 50%;
+                    background-size: 130% auto;
+                    z-index: 3;
 
-                    &:hover {
-                        background: rgba(255, 255, 255, 0.2);
-                        border-color: rgba(255, 255, 255, 0.4);
+                    p {
+                        display: block;
+                        opacity: 1;
                     }
                 }
             }
-        }
 
-        .contact-divider {
-            width: 1px;
-            background: rgba(255, 255, 255, 0.2);
+            /* 右側面板 */
+            .panel.right {
+                background: url(../images/Home/Contact_right.png);
+                background-size: cover;
 
-            @media (max-width: 992px) {
-                width: 100%;
-                height: 1px;
+                clip-path: polygon(calc(var(--ct) + var(--gap)/2) 0,
+                        100% 0,
+                        100% 100%,
+                        calc(var(--cb) + var(--gap)/2) 100%);
+                background-position: 80% 50%;
+
+                /* 初始：右下角（仍用左/上 + 負位移，不用 right/bottom） */
+                .label {
+                    --lx: calc(100% - 28px);
+                    --ly: calc(100% - 24px);
+                    --tx: -100%;
+                    --ty: -100%;
+
+                }
+
+                /* 視覺往左填（background 位移/放大） */
+                &:hover {
+                    background-position: 62% 50%;
+                    background-size: 130% auto;
+                    z-index: 3;
+
+                    p {
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            /* 置中文字（center，置中）—放在最後，層疊勝過角落設定 */
+            .panel.left:hover .label,
+            .panel.right:hover .label {
+                --lx: 50%;
+                --ly: 50%;
+                --tx: -50%;
+                --ty: -50%;
+                text-shadow: 0 6px 22px rgba(0, 0, 0, .7);
+                font-size: clamp(20px, 3vw, 28px);
+            }
+
+            /* RWD（responsive web design，自適應） */
+            @media (max-width: 768px) {
+                border-width: 5px;
+                --gap: 8px;
+            }
+
+            @media (max-width: 480px) {
+                --gap: 6px;
+                /* 若要小螢幕改上下堆疊：
+			.panel { position: relative; height: 50%; clip-path: none; }
+			*/
             }
         }
     }
 
-    // Footer
-    .footer {
-        background: #2C3E50;
-        color: #FFFFFF;
-        padding: 60px 0 40px;
 
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-
-            @media (max-width: 768px) {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 30px;
-            }
-        }
-
-        .footer-left {
-            display: flex;
-            align-items: flex-end;
-            gap: 30px;
-
-            @media (max-width: 768px) {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-            }
-
-            .footer-logo {
-                height: 40px;
-                width: auto;
-            }
-
-            .footer-text {
-                p {
-                    font-size: 1.1rem;
-                    font-weight: 600;
-                    margin-bottom: 5px;
-                }
-
-                small {
-                    opacity: 0.8;
-                    font-size: 0.9rem;
-                }
-            }
-        }
-
-        .footer-right {
-            h4 {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-                color: #7DB4C7;
-            }
-
-            .social-links {
-                display: flex;
-                align-items: center;
-                gap: 15px;
-
-                span {
-                    padding-right: 15px;
-                    border-right: 1px solid rgba(255, 255, 255, 0.3);
-                    font-size: 0.9rem;
-                }
-
-                a {
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-                    &:hover {
-                        transform: translateY(-2px);
-                    }
-
-                    img {
-                        width: 36px;
-                        height: 36px;
-                        border-radius: 50%;
-                    }
-                }
-            }
-        }
-    }
 
     // Back to Top Button
     .back-to-top {

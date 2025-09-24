@@ -164,7 +164,7 @@ const SafeTravel = () => {
   ];
 
   return (
-    <div className="safe-travel">
+    <div className="Home">
 
       <section id="hero" ref={sectionRefs.hero} className="hero-section">
         <div className="hero-bg">
@@ -189,7 +189,7 @@ const SafeTravel = () => {
 
           <div className="features-grid">
             {featuresData.map((feature, index) => (
-              <div key={index} className={`feature-card ${activeAnimations.features ? 'animate' : ''}`} style={{animationDelay: `${index * 0.2}s`}}>
+              <div key={index} className={`feature-card ${activeAnimations.features ? 'animate' : ''}`} style={{ animationDelay: `${index * 0.2}s` }}>
                 <div className="feature-icon">
                   <img src={`/api/placeholder/80/80`} alt={feature.title} />
                 </div>
@@ -237,7 +237,7 @@ const SafeTravel = () => {
 
           <div className="booking-steps">
             {bookingSteps.map((step, index) => (
-              <div key={index} className={`booking-step ${activeAnimations.booking ? 'animate' : ''}`} style={{animationDelay: `${index * 0.3}s`}}>
+              <div key={index} className={`booking-step ${activeAnimations.booking ? 'animate' : ''}`} style={{ animationDelay: `${index * 0.3}s` }}>
                 <div className="step-circle">
                   <span className="step-number">{step.number}</span>
                 </div>
@@ -253,49 +253,24 @@ const SafeTravel = () => {
       </section>
 
       <section id="contact" ref={sectionRefs.contact} className="contact-section">
-        <div className="contact-content">
-          <div className="contact-left">
-            <div className="contact-info">
+        <div className="split-banner">
+          <a className="panel left" href="#">
+            <span className="label">
               <h2>Customized Tours</h2>
               <h3>量身訂做</h3>
               <p>無論您是對行程已有想法，或需要規劃上的建議，動漫巡禮皆歡迎您與我們聯繫，我們將聆聽您的需求，為您量身訂製最適合您的行程。</p>
-              <button className="contact-btn"><Link to="/CustomizedTours">客製規劃 →</Link></button>
-            </div>
-          </div>
-
-          <div className="contact-divider"></div>
-
-          <div className="contact-right">
-            <div className="contact-info">
+            </span>
+          </a>
+          <a className="panel right" href="#">
+            <span className="label">
               <h2>Contact Us</h2>
               <h3>聯絡我們</h3>
               <p>感謝您來訪動漫巡禮。若您對本公司旅遊行程，需要進一步詢皆歡迎您隨時與我們聯繫</p>
-              <button className="contact-btn">立即諮詢 →</button>
-            </div>
-          </div>
+            </span>
+          </a>
         </div>
       </section>
 
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-left">
-            <img src="/api/placeholder/120/40" alt="Safe Travel Logo" className="footer-logo" />
-            <div className="footer-text">
-              <p>AniRoute 動漫巡禮</p>
-              <small>您值得信賴的動漫朝聖旅遊夥伴</small>
-            </div>
-          </div>
-
-          <div className="footer-right">
-            <h4>Follow Us</h4>
-            <div className="social-links">
-              <span>追蹤我們</span>
-              <a href="#"><img src="/api/placeholder/36/36" alt="Facebook" /></a>
-              <a href="#"><img src="/api/placeholder/36/36" alt="Instagram" /></a>
-            </div>
-          </div>
-        </div>
-      </footer>
 
       {showTopButton && (
         <button className="back-to-top" onClick={scrollToTop}>
