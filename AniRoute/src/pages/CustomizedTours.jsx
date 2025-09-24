@@ -56,13 +56,14 @@ const CustomizedTours = () => {
                     <div className="intro-container">
                         <div className="text-content">
                             <p>
-                                無論您是對行程已有想法，或需要規劃上的建議，動漫巡禮皆歡迎您與我們聯繫。<br />
-                                我們將聆聽您的需求，為您量身訂製最適合您的行程。
+                                無論您已經有心中嚮往的巡禮行程，或是希望獲得專業的規劃建議，<br />
+                                我們都誠摯邀請您與我們聯繫。<br />
+                                我們將仔細傾聽您的需求，為您打造最符合期待的專屬動漫巡禮體驗。
                             </p>
                             <p>
-                                您可選擇您最方便的模式與我們聯繫：<br />
-                                (+886) 02-8888-8888 <br />
-                                <a href="mailto:service@safetravel.com">service@safetravel.com</a>
+                                聯繫方式：<br />
+                                📞 (+886) 02-6666-6666 <br />
+                                <a href="mailto:service@safetravel.com">service@AniRoute.com</a>
                             </p>
                             <div className="line-button">
                                 <div>
@@ -110,7 +111,7 @@ const CustomizedTours = () => {
                         <div className="form-row">
                             {/* 電話欄位 */}
                             <div className="input-half">
-                                <label htmlFor="phone">電話（建議以手機為主）<span>*</span></label>
+                                <label htmlFor="phone">手機號碼<span>*</span></label>
                                 <input
                                     type="tel"
                                     id="phone"
@@ -174,9 +175,9 @@ const CustomizedTours = () => {
                                     onChange={handleInputChange}
                                 >
                                     <option value="">請選擇</option>
-                                    <option value="南北島全覽">南北島全覽</option>
-                                    <option value="北島">北島</option>
-                                    <option value="南島">南島</option>
+                                    <option value="東京">東京</option>
+                                    <option value="大阪">大阪</option>
+                                    <option value="京都">京都</option>
                                     <option value="尚未確定">尚未確定</option>
                                 </select>
                             </div>
@@ -225,7 +226,7 @@ const CustomizedTours = () => {
                         <div className="form-row">
                             {/* 參考行程1欄位 */}
                             <div className="input-half">
-                                <label htmlFor="reference1">參考行程 1</label>
+                                <label htmlFor="reference1">參考動畫 1</label>
                                 <select
                                     name="reference1"
                                     id="reference1"
@@ -233,21 +234,18 @@ const CustomizedTours = () => {
                                     onChange={handleInputChange}
                                 >
                                     <option value="">請選擇</option>
-                                    <option value="經典南北島全覽 13 日">經典南北島全覽 13 日</option>
-                                    <option value="南島深度遊 10 日">南島深度遊 10 日</option>
-                                    <option value="北島深度遊 6 日">北島深度遊 6 日</option>
-                                    <option value="南島海岸遊 6 日">南島海岸遊 6 日</option>
-                                    <option value="南島冒險遊 4 日">南島冒險遊 4 日</option>
-                                    <option value="南島攝影 6 日">南島攝影 6 日</option>
-                                    <option value="南北島登山遊 10 日">南北島登山遊 10 日</option>
-                                    <option value="南島單車遊 10 日">南島單車遊 10 日</option>
-                                    <option value="南島滑雪遊 8 日">南島滑雪遊 8 日</option>
+                                    <option value="白箱 劇場版">白箱 劇場版</option>
+                                    <option value="魔法禁書目錄">魔法禁書目錄</option>
+                                    <option value="孤獨搖滾">孤獨搖滾</option>
+                                    <option value="戀上換裝娃娃">戀上換裝娃娃</option>
+                                    <option value="JoJo的奇妙冒險 星塵遠征軍">JoJo的奇妙冒險 星塵遠征軍</option>
+                                    <option value="命運石之門">命運石之門</option>
                                 </select>
                             </div>
 
                             {/* 參考行程2欄位 */}
                             <div className="input-half">
-                                <label htmlFor="reference2">參考行程 2</label>
+                                <label htmlFor="reference2">參考動畫 2</label>
                                 <select
                                     name="reference2"
                                     id="reference2"
@@ -255,22 +253,19 @@ const CustomizedTours = () => {
                                     onChange={handleInputChange}
                                 >
                                     <option value="">請選擇</option>
-                                    <option value="經典南北島全覽 13 日">經典南北島全覽 13 日</option>
-                                    <option value="南島深度遊 10 日">南島深度遊 10 日</option>
-                                    <option value="北島深度遊 6 日">北島深度遊 6 日</option>
-                                    <option value="南島海岸遊 6 日">南島海岸遊 6 日</option>
-                                    <option value="南島冒險遊 4 日">南島冒險遊 4 日</option>
-                                    <option value="南島攝影 6 日">南島攝影 6 日</option>
-                                    <option value="南北島登山遊 10 日">南北島登山遊 10 日</option>
-                                    <option value="南島單車遊 10 日">南島單車遊 10 日</option>
-                                    <option value="南島滑雪遊 8 日">南島滑雪遊 8 日</option>
+                                    <option value="白箱 劇場版">白箱 劇場版</option>
+                                    <option value="魔法禁書目錄">魔法禁書目錄</option>
+                                    <option value="孤獨搖滾">孤獨搖滾</option>
+                                    <option value="戀上換裝娃娃">戀上換裝娃娃</option>
+                                    <option value="JoJo的奇妙冒險 星塵遠征軍">JoJo的奇妙冒險 星塵遠征軍</option>
+                                    <option value="命運石之門">命運石之門</option>
                                 </select>
                             </div>
                         </div>
 
                         {/* 其他行程需求欄位 */}
                         <div className="input-full">
-                            <label htmlFor="request">其他行程需求</label>
+                            <label htmlFor="request">其他動漫行程</label>
                             <textarea
                                 id="request"
                                 name="request"
@@ -294,7 +289,7 @@ const CustomizedTours = () => {
 
                         {/* 警告聲明 */}
                         <div className="warning">
-                            ✽本網站為練習作品，非正式網站。<br />
+                            ✽本網站為練習網頁。<br />
                             此表單僅為示意，並無任何後台功能，不具有蒐集個人資料之功能，不具有商業行為，特此申明。
                         </div>
 

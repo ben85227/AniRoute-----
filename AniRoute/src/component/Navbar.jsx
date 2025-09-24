@@ -24,11 +24,10 @@ const Navbar = () => {
                 </button>
                 <nav className={`navigation ${isOpen ? 'show' : ''}`}>
                     <ul className='menu'>
-                        {/* <li><Link to='/News'>最新消息</Link></li>
-            <li><Link to='/Illustrations'>酒精圖鑑</Link></li>
-            <li><Link to='/Bar'>酒吧地圖</Link></li>
-            <li><Link to='/BarRoute'>路跑路線</Link></li>
-            <li><Link to='/About'>關於我們</Link></li> */}
+                        <li><Link to='/'>首頁</Link></li>
+                        <li><Link to='/TourList'>行程列表</Link></li>
+                        <li><Link to='/CustomizedTours'>量身訂做</Link></li>
+                        <li><Link to='/Contact'>聯絡我們</Link></li>
                     </ul>
                 </nav>
             </div>
