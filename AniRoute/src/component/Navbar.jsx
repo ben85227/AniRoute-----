@@ -12,7 +12,7 @@ const Navbar = () => {
 
     return (
         <div id='topbar'>
-            <div className="logo"><Link to='/'><img src="/LOGONav.png" alt="logo" /></Link></div>
+            <div className="logo"><Link to='/'><img src="LOGONav.png" alt="logo" /></Link></div>
             <div className="navbar">
                 <button
                     className={`hamburger ${isOpen ? 'is-active' : ''}`}
