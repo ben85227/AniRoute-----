@@ -98,7 +98,7 @@ const SafeTravel = () => {
   title: "孤獨搖滾！",
   subtitle: "下北澤的青春樂章",
   description: "從STARRY原型LIVE HOUSE到澀谷街角，追尋波奇與團員們的搖滾舞台。",
-  image: "",
+  image: "tours1.jpg",
 },
 {
   id: 2,
@@ -106,7 +106,7 @@ const SafeTravel = () => {
   title: "你的名字。",
   subtitle: "跨越時空的奇蹟",
   description: "走訪四谷須賀神社、新宿街景與天橋，重溫瀧與三葉的感人邂逅。",
-  image: "",
+  image: "tours2.jpg",
 },
 {
   id: 3,
@@ -114,7 +114,7 @@ const SafeTravel = () => {
   title: "Love Live!",
   subtitle: "秋葉原的偶像夢",
   description: "從神田明神到秋葉原街頭，重溫μ’s 的校園舞台與夢想起點。",
-  image: "",
+  image: "tours3.jpg",
 },
 {
   id: 4,
@@ -122,7 +122,7 @@ const SafeTravel = () => {
   title: "聲之形",
   subtitle: "溫柔的青春軌跡",
   description: "大垣市的學校與河畔橋梁重現劇中場景，走進石田與西宮的故事現場。",
-  image: "",
+  image: "tours4.jpg",
 },
 {
   id: 5,
@@ -130,7 +130,7 @@ const SafeTravel = () => {
   title: "鬼滅之刃",
   subtitle: "古都修行之路",
   description: "探訪貴船神社、嵐山與北野天滿宮，感受炭治郎踏上的修行氛圍。",
-  image: "",
+  image: "tours5.jpg",
 },
 {
   id: 6,
@@ -138,7 +138,7 @@ const SafeTravel = () => {
   title: "偶像大師 SideM",
   subtitle: "大阪的舞台光輝",
   description: "京橋與道頓堀街景清楚登場，體驗偶像們在關西留下的熱情足跡。",
-  image: "",
+  image: "tours6.jpg",
 }
   ];
 
@@ -190,38 +190,8 @@ const SafeTravel = () => {
           <div className="features-grid">
             {featuresData.map((feature, index) => (
               <div key={index} className={`feature-card ${activeAnimations.features ? 'animate' : ''}`} style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="feature-icon">
-                  <img src={`/api/placeholder/80/80`} alt={feature.title} />
-                </div>
                 <h3 className="feature-title">{feature.title}</h3>
                 <p className="feature-description">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="tours" ref={sectionRefs.tours} className="tours-section">
-        <div className="container">
-          <div className="section-header">
-            <div className="section-title-left">
-              <h2>Tours</h2>
-              <h3>行程列表</h3>
-              <button className="view-all-btn"><Link to="/TourList">查看全部 →</Link></button>
-            </div>
-          </div>
-
-          <div className="tours-grid">
-            {toursData.map((tour) => (
-              <div key={tour.id} className={`tour-card ${activeAnimations.tours ? 'animate' : ''}`} onClick={() => showLightbox(tour.title, tour.description)}>
-                <div className="tour-number">{tour.number}</div>
-                <div className="tour-image">
-                  <img src={tour.image} alt={tour.title} />
-                </div>
-                <div className="tour-content">
-                  <h3 className="tour-title">{tour.title}</h3>
-                  {tour.subtitle && <p className="tour-subtitle">{tour.subtitle}</p>}
-                </div>
               </div>
             ))}
           </div>
@@ -251,6 +221,37 @@ const SafeTravel = () => {
           </div>
         </div>
       </section>
+
+<section id="tours" ref={sectionRefs.tours} className="tours-section">
+  <div className="container">
+    <div className="tours-layout">
+      <div className="section-title-left">
+        <h2>Tours</h2>
+        <h3>行程列表</h3>
+        <button className="view-all-btn">
+          <Link to="/TourList">查看全部 →</Link>
+        </button>
+      </div>
+
+      <div className="tour-box">
+        {toursData.slice(0, 6).map((tour) => (
+            <Link to="/TourList" className="tour" key={tour.id}>
+            <a className="mask" href="#">
+              <img src={tour.image} alt={tour.title} />
+              <div className="content">
+                <h2 className="cn-title-s">{tour.title}</h2>
+                <span className="center-line"></span>
+                <p className="cn-content-s">{tour.description}</p>
+              </div>
+            </a>
+          </Link>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       <section id="contact" ref={sectionRefs.contact} className="contact-section">
         <div className="split-banner">

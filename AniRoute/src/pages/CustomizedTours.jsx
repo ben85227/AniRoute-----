@@ -40,12 +40,9 @@ const CustomizedTours = () => {
             {/* 頁面橫幅區域 */}
             <div className="banner">
                 <div className="square-box">
-                    <img src="#" alt="" />
-                    <div className="circle-box">
                         <div className="title-section">
                             <h2 className="chinese-title">量身訂製</h2>
                             <h3 className="english-title">Customized Tours</h3>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -56,12 +53,12 @@ const CustomizedTours = () => {
                     <div className="intro-container">
                         <div className="text-content">
                             <p>
-                                無論您已經有心中嚮往的巡禮行程，或是希望獲得專業的規劃建議，<br />
-                                我們都誠摯邀請您與我們聯繫。<br />
+                                無論您已經有心中嚮往的巡禮行程，或是希望獲得專業的規劃建議，
+                                我們都誠摯邀請您與我們聯繫。
                                 我們將仔細傾聽您的需求，為您打造最符合期待的專屬動漫巡禮體驗。
                             </p>
                             <p>
-                                聯繫方式：<br />
+                                聯繫方式：
                                 📞 (+886) 02-6666-6666 <br />
                                 <a href="mailto:service@safetravel.com">service@AniRoute.com</a>
                             </p>

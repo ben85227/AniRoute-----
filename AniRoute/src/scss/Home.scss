@@ -114,7 +114,7 @@
 
     // Features Section
     .features-section {
-        padding: 60px 0;
+        padding: 80px 0;
         background: $color-b;
 
         .section-header {
@@ -122,7 +122,7 @@
             margin-bottom: 80px;
 
             .section-title {
-                font-size: 2.5rem;
+                font-size: 42px;
                 font-weight: 700;
                 color: $color-o;
                 margin-bottom: 20px;
@@ -133,7 +133,7 @@
             }
 
             .section-subtitle {
-                font-size: 1.2rem;
+                font-size: 30px;
                 color: $color-g;
             }
         }
@@ -151,7 +151,7 @@
 
         .feature-card {
             text-align: center;
-            padding: 40px 30px;
+            padding: 70px 45px;
             border-radius: 20px;
             background: #F8FAFB;
             border: 2px solid transparent;
@@ -171,25 +171,8 @@
                 background: $color-o;
             }
 
-            .feature-icon {
-                width: 80px;
-                height: 80px;
-                margin: 0 auto 30px;
-                border-radius: 50%;
-                background: linear-gradient(135deg, #4A90A4, #7DB4C7);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                img {
-                    width: 50px;
-                    height: 50px;
-                    filter: brightness(0) invert(1);
-                }
-            }
-
             .feature-title {
-                font-size: 1.5rem;
+                font-size: 24px;
                 font-weight: 600;
                 color: $color-b;
                 margin-bottom: 20px;
@@ -198,154 +181,14 @@
             .feature-description {
                 color: $color-b;
                 line-height: 1.6;
-            }
-        }
-    }
-
-    // Tours Section
-    .tours-section {
-        padding: 30px 0;
-        background: #2E5A68;
-        color: #FFFFFF;
-
-        .section-header {
-            margin-bottom: 60px;
-
-            .section-title-left {
-                h2 {
-                    font-family: "Josefin Sans", sans-serif;
-                    font-size: 1.5rem;
-                    font-weight: 400;
-                    margin-bottom: 10px;
-                    opacity: 0.9;
-                }
-
-                h3 {
-                    font-size: 2.5rem;
-                    font-weight: 700;
-                    margin-bottom: 30px;
-
-                    @media (max-width: 768px) {
-                        font-size: 2rem;
-                    }
-                }
-
-                .view-all-btn {
-                    background: rgba(255, 255, 255, 0.1);
-                    color: #FFFFFF;
-                    padding: 12px 24px;
-                    border-radius: 25px;
-                    border: 1px solid rgba(255, 255, 255, 0.2);
-                    font-weight: 500;
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-                    &:hover {
-                        background: rgba(255, 255, 255, 0.2);
-                        transform: translateY(-2px);
-                    }
-                }
-            }
-        }
-
-        .tours-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-
-            @media (max-width: 768px) {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-
-        .tour-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-
-            &.animate {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            &:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-                background: rgba(255, 255, 255, 0.08);
-
-                .tour-image img {
-                    transform: scale(1.05);
-                }
-            }
-
-            .tour-number {
-                position: absolute;
-                top: 15px;
-                left: 15px;
-                width: 30px;
-                height: 30px;
-                background: #FF6B6B;
-                color: #FFFFFF;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: 700;
-                z-index: 2;
-                font-size: 14px;
-            }
-
-            .tour-image {
-                height: 200px;
-                overflow: hidden;
-                position: relative;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                }
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(to bottom, transparent, rgba(46, 90, 104, 0.3));
-                }
-            }
-
-            .tour-content {
-                padding: 25px 20px;
-
-                .tour-title {
-                    font-size: 1.3rem;
-                    font-weight: 600;
-                    margin-bottom: 8px;
-                    color: #FFFFFF;
-                }
-
-                .tour-subtitle {
-                    color: #7DB4C7;
-                    font-size: 0.95rem;
-                    opacity: 0.9;
-                }
+                font-size: 16px;
             }
         }
     }
 
     // Booking Section
     .booking-section {
-        padding: 50px 0;
+        padding: 70px 0;
         background: #F8FAFB;
 
         .section-header {
@@ -354,16 +197,16 @@
 
             h2 {
                 font-family: "Josefin Sans", sans-serif;
-                font-size: 1.5rem;
+                font-size: 40px;
                 font-weight: 400;
                 margin-bottom: 10px;
                 color: #4A90A4;
             }
 
             h3 {
-                font-size: 2.5rem;
+                font-size: 50px;
                 font-weight: 700;
-                color: #2C3E50;
+                color: $color-b;
 
                 @media (max-width: 768px) {
                     font-size: 2rem;
@@ -419,7 +262,7 @@
                 }
 
                 .step-number {
-                    font-size: 2.5rem;
+                    font-size: 40px;
                     font-weight: 700;
                     color: #FFFFFF;
                 }
@@ -427,14 +270,14 @@
 
             .step-content {
                 .step-title {
-                    font-size: 1.4rem;
+                    font-size: 28px;
                     font-weight: 600;
                     color: #2C3E50;
                     margin-bottom: 10px;
                 }
 
                 .step-subtitle {
-                    font-size: 1rem;
+                    font-size: 18px;
                     color: #4A90A4;
                     margin-bottom: 15px;
                     font-weight: 500;
@@ -443,11 +286,280 @@
                 .step-description {
                     color: #5A6C7D;
                     line-height: 1.6;
-                    font-size: 0.95rem;
+                    font-size: 16px;
                 }
             }
         }
     }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+
+        50% {
+            transform: scale(1.05);
+            opacity: 0.3;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+    }
+
+    // Tours Section
+    .tours-section {
+        background-color: #0F3357;
+        margin: 0;
+        height: 90vh;
+        .container {
+            max-width: 1920px;
+            padding-block: 60px;
+            margin: 0;
+        }
+
+        // 左右兩欄：左標題不動、右卡片牆
+        .tours-layout {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        // 左側標題區塊
+        .section-title-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            h2 {
+                font-family: "Josefin Sans", sans-serif;
+                font-size: 34px;
+                font-weight: 400;
+                margin-bottom: 10px;
+                color: $color-o;
+            }
+
+            h3 {
+                font-size: 50px;
+                font-weight: 700;
+                color: $color-o;
+                margin-bottom: 40px;
+
+                @media (max-width: 768px) {
+                    font-size: 2rem;
+                }
+            }
+
+            .view-all-btn {
+                width: max-content;
+                padding: 8px 16px;
+                border-radius: 8px;
+                background: $color-o;
+                border: none;
+                padding: 0;
+                border: 2px solid transparent;
+
+                a {
+                    font-size: 18px;
+                    color: $color-b;
+                    text-decoration: none;
+                    font-weight: 500;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: $color-g;
+                    }
+                }
+            }
+        }
+
+        // 右側卡片牆（上三下三）
+        .tour-box {
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            // 單個行程卡片
+            .tour {
+                width: 60%;
+                margin: 10px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                position: relative;
+                aspect-ratio: 1.5 / 1; 
+                border-radius: 12px;
+                overflow: hidden;
+                flex: 1 1 calc(33.3% - 20px);
+                box-sizing: border-box;
+
+                // 遮罩層
+                .mask {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    display: block;
+
+                    // 遮罩覆蓋效果（預設淡，hover 深）
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        inset: 0;
+                        z-index: 2;
+                        background-color: rgba(0, 0, 0, 0.2); // 替代 var(--dark-20)
+                        transition: all 0.5s ease-in-out;
+                    }
+                }
+
+                // 行程圖片
+                img {
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 1;
+                    transition: all 0.5s ease-in-out;
+                    object-fit: cover;
+                }
+
+                // 內容區域
+                .content {
+                    width: calc(100% - 40px);
+                    height: calc(100% - 40px);
+                    margin: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    z-index: 3;
+                    color: $color-o;
+                    border: 2px solid transparent;
+
+                    // 邊框動畫效果
+                    &::before,
+                    &::after {
+                        content: "";
+                        box-sizing: border-box;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        border: solid transparent;
+                        border-image: var(--gradient) 30%;
+                        transform-origin: center;
+                        transition: all 0.5s ease-in-out;
+                    }
+
+                    &::before {
+                        border-width: 2px 0;
+                        transform: scaleX(0);
+                    }
+
+                    &::after {
+                        border-width: 0 2px;
+                        transform: scaleY(0);
+                    }
+
+                    // 標題
+                    .cn-title-s {
+                        width: fit-content;
+                        padding-bottom: 12px;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        z-index: 4;
+                        transform: translate(-50%, -100%);
+                        white-space: nowrap;
+                        filter: drop-shadow(1px 1px 2px var(--dark-40));
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+
+                    // 描述文字
+                    .cn-content-s {
+                        width: 100%;
+                        padding: 16px 20px 0;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        z-index: 4;
+                        transform: translate(-50%, 0);
+                        text-align: justify;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        opacity: 0;
+                        transition: all 0.5s ease-in-out;
+                    }
+                }
+
+                // 懸停效果：遮罩變深、圖放大、邊框展開、分隔線收起、描述顯示
+                &:hover {
+                    .mask::after {
+                        background-color: rgba($color-b, 0.7);
+                    }
+
+                    img {
+                        transform: scale(1.2);
+                    }
+
+                    .content {
+                        &::before {
+                            transform: scaleX(1);
+                        }
+
+                        &::after {
+                            transform: scaleY(1);
+                        }
+
+                        .center-line {
+                            transform: scaleX(0);
+                        }
+
+                        .cn-content-s {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 響應式設計：1200px 以下兩欄、576px 以下單欄
+        @media (max-width: 1200px) {
+            .tours-layout {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .tour-box .tour {
+                width: 48%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .tour-box {
+                justify-content: center;
+            }
+
+            .tour-box .tour {
+                width: 100%;
+            }
+        }
+    }
+
+
 
     // Contact Section
     #contact {
@@ -603,7 +715,7 @@
                 /* 視覺往右填（background 位移/放大） */
                 &:hover {
                     background-position: 38% 50%;
-                    background-size: 130% auto;
+                    // background-size: 130% auto;
                     z-index: 3;
 
                     p {
@@ -708,22 +820,6 @@
     }
 
     // Animations
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-            opacity: 0.3;
-        }
-
-        50% {
-            transform: scale(1.05);
-            opacity: 0.1;
-        }
-
-        100% {
-            transform: scale(1);
-            opacity: 0.3;
-        }
-    }
 
     @keyframes fadeInUp {
         from {

@@ -83,8 +83,8 @@ const ToursList = () => {
       <div className="banner">
         <div className="banner-overlay">
           <div className="banner-content">
-            <h1 className="banner-title-en">Tours List</h1>
             <h2 className="banner-title-cn">行程列表</h2>
+            <h3 className="banner-title-en">Tours List</h3>
           </div>
         </div>
       </div>
