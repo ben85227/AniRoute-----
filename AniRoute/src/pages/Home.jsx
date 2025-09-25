@@ -93,53 +93,53 @@ const SafeTravel = () => {
 
   const toursData = [
     {
-      id: 1,
-      number: "1",
-      title: "白雪奇緣",
-      subtitle: "天雪怪旅外遊",
-      description: "探索紐西蘭南島的壯麗雪山風光",
-      image: "/api/placeholder/300/200"
-    },
-    {
-      id: 2,
-      number: "2",
-      title: "龍征傳說",
-      subtitle: "古山中奇歷險",
-      description: "深入中土世界的魔戒拍攝場景",
-      image: "/api/placeholder/300/200"
-    },
-    {
-      id: 3,
-      number: "3",
-      title: "智慧魔法",
-      subtitle: "",
-      description: "體驗紐西蘭獨特的文化與自然奇觀",
-      image: "/api/placeholder/300/200"
-    },
-    {
-      id: 4,
-      number: "4",
-      title: "海上族城堡",
-      subtitle: "霧上龍宮",
-      description: "探索海岸線的壯麗城堡與秘境",
-      image: "/api/placeholder/300/200"
-    },
-    {
-      id: 5,
-      number: "5",
-      title: "Jojo冒險奇遇 星塵鬥士篇",
-      subtitle: "",
-      description: "跟隨經典動漫場景的冒險之旅",
-      image: "/api/placeholder/300/200"
-    },
-    {
-      id: 6,
-      number: "6",
-      title: "南島巡迴之冒",
-      subtitle: "千里遊歷",
-      description: "完整體驗紐西蘭南島精華景點",
-      image: "/api/placeholder/300/200"
-    }
+  id: 1,
+  number: "1",
+  title: "孤獨搖滾！",
+  subtitle: "下北澤的青春樂章",
+  description: "從STARRY原型LIVE HOUSE到澀谷街角，追尋波奇與團員們的搖滾舞台。",
+  image: "",
+},
+{
+  id: 2,
+  number: "2",
+  title: "你的名字。",
+  subtitle: "跨越時空的奇蹟",
+  description: "走訪四谷須賀神社、新宿街景與天橋，重溫瀧與三葉的感人邂逅。",
+  image: "",
+},
+{
+  id: 3,
+  number: "3",
+  title: "Love Live!",
+  subtitle: "秋葉原的偶像夢",
+  description: "從神田明神到秋葉原街頭，重溫μ’s 的校園舞台與夢想起點。",
+  image: "",
+},
+{
+  id: 4,
+  number: "4",
+  title: "聲之形",
+  subtitle: "溫柔的青春軌跡",
+  description: "大垣市的學校與河畔橋梁重現劇中場景，走進石田與西宮的故事現場。",
+  image: "",
+},
+{
+  id: 5,
+  number: "5",
+  title: "鬼滅之刃",
+  subtitle: "古都修行之路",
+  description: "探訪貴船神社、嵐山與北野天滿宮，感受炭治郎踏上的修行氛圍。",
+  image: "",
+},
+{
+  id: 6,
+  number: "6",
+  title: "偶像大師 SideM",
+  subtitle: "大阪的舞台光輝",
+  description: "京橋與道頓堀街景清楚登場，體驗偶像們在關西留下的熱情足跡。",
+  image: "",
+}
   ];
 
   const bookingSteps = [
@@ -254,20 +254,20 @@ const SafeTravel = () => {
 
       <section id="contact" ref={sectionRefs.contact} className="contact-section">
         <div className="split-banner">
-          <a className="panel left" href="#">
+          <Link to="/CustomizedTours" className="panel left">
             <span className="label">
               <h2>Customized Tours</h2>
               <h3>量身訂做</h3>
               <p>無論您是對行程已有想法，或需要規劃上的建議，動漫巡禮皆歡迎您與我們聯繫，我們將聆聽您的需求，為您量身訂製最適合您的行程。</p>
             </span>
-          </a>
-          <a className="panel right" href="#">
+          </Link>
+          <Link to="/Contact" className="panel right">
             <span className="label">
               <h2>Contact Us</h2>
               <h3>聯絡我們</h3>
               <p>感謝您來訪動漫巡禮。若您對本公司旅遊行程，需要進一步詢皆歡迎您隨時與我們聯繫</p>
             </span>
-          </a>
+          </Link>
         </div>
       </section>
 
