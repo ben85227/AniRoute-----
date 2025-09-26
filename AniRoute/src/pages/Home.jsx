@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import '../scss/Home.scss'
 
-const SafeTravel = () => {
+const AniRoute = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showTopButton, setShowTopButton] = useState(false);
   const [lightboxData, setLightboxData] = useState(null);
@@ -236,14 +236,14 @@ const SafeTravel = () => {
       <div className="tour-box">
         {toursData.slice(0, 6).map((tour) => (
             <Link to="/TourList" className="tour" key={tour.id}>
-            <a className="mask" href="#">
+            <div className="mask" href="#">
               <img src={tour.image} alt={tour.title} />
               <div className="content">
                 <h2 className="cn-title-s">{tour.title}</h2>
                 <span className="center-line"></span>
                 <p className="cn-content-s">{tour.description}</p>
               </div>
-            </a>
+            </div>
           </Link>
         ))}
       </div>
@@ -282,4 +282,4 @@ const SafeTravel = () => {
   );
 };
 
-export default SafeTravel;
+export default AniRoute;

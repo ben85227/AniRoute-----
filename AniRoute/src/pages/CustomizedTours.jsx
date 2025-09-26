@@ -60,14 +60,14 @@ const CustomizedTours = () => {
                             <p>
                                 聯繫方式：
                                 📞 (+886) 02-6666-6666 <br />
-                                <a href="mailto:service@safetravel.com">service@AniRoute.com</a>
+                                <a href="mailto:service@AniRoute.com">service@AniRoute.com</a>
                             </p>
-                            <div className="line-button">
-                                <div>
-                                    LINE
-                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgMTJIMTlNMTkgMTJMMTMgNk0xOSAxMkwxMyAxOCIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=" alt="箭頭" />
-                                </div>
-                            </div>
+                            {/* <div className="line-button"> */}
+                                {/* <div> */}
+                                    {/* LINE */}
+                                    {/* <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgMTJIMTlNMTkgMTJMMTMgNk0xOSAxMkwxMyAxOCIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=" alt="箭頭" /> */}
+                                {/* </div> */}
+                            {/* </div> */}
                         </div>
                     </div>
                 </div>

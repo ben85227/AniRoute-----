@@ -57,9 +57,9 @@
             color: #FFFFFF;
 
             .hero-title {
-                font-size: 70px;
+                font-size: 80px;
                 font-weight: 700;
-                margin-bottom: 20px;
+                margin-bottom: 30px;
                 line-height: 1.2;
                 // text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
                 align-items: center;
@@ -76,8 +76,8 @@
             }
 
             .hero-subtitle {
-                font-size: 30px;
-                margin-bottom: 15px;
+                font-size: 36px;
+                margin-bottom: 20px;
                 display: flex;
                 justify-content: end;
                 margin-right: 250px; // 增加往右的距離
@@ -94,7 +94,7 @@
             }
 
             .hero-description {
-                font-size: 24px;
+                font-size: 30px;
                 margin-right: 180px; // 進一步增加往右的距離，形成階梯效果
                 opacity: 0.9;
                 display: flex;
@@ -114,7 +114,7 @@
 
     // Features Section
     .features-section {
-        padding: 80px 0;
+        padding: 100px 0;
         background: $color-b;
 
         .section-header {
@@ -125,7 +125,7 @@
                 font-size: 42px;
                 font-weight: 700;
                 color: $color-o;
-                margin-bottom: 20px;
+                margin-bottom: 40px;
 
                 @media (max-width: 768px) {
                     font-size: 2rem;
@@ -162,13 +162,6 @@
             &.animate {
                 opacity: 1;
                 transform: translateY(0);
-            }
-
-            &:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 20px 40px rgba(44, 62, 80, 0.1);
-                border-color: $color-b;
-                background: $color-o;
             }
 
             .feature-title {
@@ -313,7 +306,8 @@
     .tours-section {
         background-color: #0F3357;
         margin: 0;
-        height: 90vh;
+        // height: 90vh;
+        padding: 50px 20px;
         .container {
             max-width: 1920px;
             padding-block: 60px;
@@ -339,13 +333,13 @@
                 font-size: 34px;
                 font-weight: 400;
                 margin-bottom: 10px;
-                color: $color-o;
+                color: #fff;
             }
 
             h3 {
                 font-size: 50px;
                 font-weight: 700;
-                color: $color-o;
+                color: #fff;
                 margin-bottom: 40px;
 
                 @media (max-width: 768px) {
@@ -357,14 +351,14 @@
                 width: max-content;
                 padding: 8px 16px;
                 border-radius: 8px;
-                background: $color-o;
+                background: #fff;
                 border: none;
                 padding: 0;
                 border: 2px solid transparent;
 
                 a {
                     font-size: 18px;
-                    color: $color-b;
+                    color: $color-o;
                     text-decoration: none;
                     font-weight: 500;
                     transition: color 0.3s ease;
@@ -441,7 +435,6 @@
                     align-items: center;
                     position: relative;
                     z-index: 3;
-                    color: $color-o;
                     border: 2px solid transparent;
 
                     // 邊框動畫效果
@@ -483,6 +476,7 @@
                         filter: drop-shadow(1px 1px 2px var(--dark-40));
                         font-size: 20px;
                         font-weight: 600;
+                        color: #fff;
                     }
 
                     // 描述文字
@@ -502,6 +496,8 @@
                         -webkit-line-clamp: 2;
                         opacity: 0;
                         transition: all 0.5s ease-in-out;
+                        color: $color-o;
+                        font-weight: 500;
                     }
                 }
 
